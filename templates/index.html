@@ -102,9 +102,12 @@
         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
       },
       success: function (data) {
-        $('h2').html("localhost:8000/" + data)
+        var linkUrl = "http://localhost:8000/" + data;
+        var linkElement = '<a href="' + linkUrl + '" target = "_blank">' + linkUrl + '</a>';
+        $('h2').html(linkElement);
       }
     });
   });
 </script>
 {% comment %} $('h2').html("www.surls.ga/"+data) {% endcomment %}
+{% comment %} $('h2').html("localhost:8000/" + data) {% endcomment %}
